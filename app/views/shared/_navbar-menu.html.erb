@@ -1,0 +1,44 @@
+<div class="offcanvas offcanvas-start navbar-menu" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <%= link_to "#", class: "navbar-brand mx-auto menu-image" do %>
+      <%= image_tag "surviving-montreal-new.png", class: "logo-small" %>
+    <% end %>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <%= link_to "Home", root_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Browse Articles", articles_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Post an Article", new_article_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Discover Events", events_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Plan an Event", new_event_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item" id="badge-link">
+        <% if user_signed_in? %>
+          <%= link_to 'My Badges', my_badges_path, class: "nav-link" %>
+          <% if current_user.unseen_badges_count > 0 %>
+            <span class="badge badge-pill badge-primary"><%= current_user.unseen_badges_count %></span>
+          <% end %>
+        <% end %>
+      </li>
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to "Sign out",destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link" %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Sign In", new_user_session_path, class: "nav-link" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

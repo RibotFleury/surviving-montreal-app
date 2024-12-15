@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+    <%= link_to root_path, class: "navbar-brand mx-auto" do %>
+      <%= image_tag "surviving-montreal-new.png", class: "logo-small" %>
+    <% end %>
+    <button class="btn btn-outline-secondary" type="button" id="navbar-search-icon">
+      <i class="fas fa-search"></i>
+    </button>
+    <%= render "shared/navbar-menu" %>
+  </div>
+</nav>

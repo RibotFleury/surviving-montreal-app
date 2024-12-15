@@ -1,0 +1,19 @@
+<%# app/views/articles/index.html.erb %>
+<h1 class="title-styling">Articles</h1>
+<%= render "/shared/search" %>
+<% @articles.each do |article| %>
+  <%= render "shared/articles-partial", article:article, bookmark:true%>
+<%end %>
+<%= javascript_tag do %>
+  document.addEventListener("turbo:load", function() {
+  document.querySelectorAll('.btn-primary').forEach(button => {
+  button.addEventListener('ajax:success', function(event) {
+  var [data, status, xhr] = event.detail;
+  var alertBox = document.createElement('div');
+  alertBox.className = 'alert alert-success';
+  alertBox.innerText = 'Saved to your bookmarks';
+  document.querySelector('.container').prepend(alertBox);
+  });
+  });
+  });
+<% end %>

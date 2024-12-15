@@ -1,0 +1,51 @@
+// Specific CSS for your home-page
+
+.home-container {
+  padding-top: 50px;
+
+  h1 {
+    font-size: 1.9rem;
+    background: #2192bf;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+
+    i {
+      color: white;
+    }
+  }
+
+  p {
+    font-size: 1.5rem;
+    font-family: "Oswald", "Helvetica", "sans-serif";
+  }
+}
+
+#submit-button,
+#search-input {
+  // border: 1px solid rgb(33, 146, 191);
+
+  button {
+    i {
+      color: rgb(33, 146, 191);
+      border: none;
+    }
+  }
+}
+
+#search-form {
+  border: 1px solid rgb(33, 146, 191);
+  border-radius: 5px;
+
+  input {
+    border: none;
+  }
+}
+
+.title-styling {
+  font-size: 1.9rem;
+  background: #2192bf;
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+}
